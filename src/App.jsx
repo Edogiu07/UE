@@ -72,30 +72,30 @@ const App = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 my-8">
             <FounderCard 
+              wikiTitle="Robert_Schuman"
               initials="RS"
               color="bg-blue-100 text-blue-800"
-              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/1/1a/Robert_Schuman_1949.jpg&w=150&h=150&fit=cover"
               name="Robert Schuman" 
               role="Ministro francese · Architetto della CECA" 
             />
             <FounderCard 
+              wikiTitle="Jean_Monnet"
               initials="JM"
               color="bg-emerald-100 text-emerald-800"
-              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/8/87/Jean_Monnet_%281888-1979%29.jpg&w=150&h=150&fit=cover"
               name="Jean Monnet" 
               role="Ispiratore del metodo comunitario" 
             />
             <FounderCard 
+              wikiTitle="Alcide_De_Gasperi"
               initials="AdG"
               color="bg-red-100 text-red-800"
-              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/c/cd/Alcide_De_Gasperi_1.jpg&w=150&h=150&fit=cover"
               name="Alcide De Gasperi" 
               role="Statista italiano · Europeista convinto" 
             />
             <FounderCard 
+              wikiTitle="Konrad_Adenauer"
               initials="KA"
               color="bg-yellow-100 text-yellow-800"
-              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/8/86/Konrad_Adenauer_%281952%29.jpg&w=150&h=150&fit=cover"
               name="Konrad Adenauer" 
               role="Cancelliere tedesco · Riconciliazione franco-tedesca" 
             />
@@ -359,14 +359,43 @@ const HighlightBlock = ({ children, className = "" }) => (
   </div>
 );
 
-const FounderCard = ({ initials, name, role, color, imgUrl }) => {
+const FounderCard = ({ wikiTitle, initials, name, role, color }) => {
+  const [imgSrc, setImgSrc] = useState(null);
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    // Interroga l'API ufficiale di Wikipedia per ottenere l'immagine in modo sicuro
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(`https://it.wikipedia.org/api/rest_v1/page/summary/${wikiTitle}`);
+        const data = await response.json();
+        if (data && data.thumbnail && data.thumbnail.source) {
+          setImgSrc(data.thumbnail.source);
+        } else {
+          setImgError(true);
+        }
+      } catch (error) {
+        setImgError(true);
+      }
+    };
+
+    fetchImage();
+  }, [wikiTitle]);
+
   return (
     <div className="bg-white border-b-4 border-[#003399] rounded-t-xl rounded-b-md p-6 flex flex-col items-center text-center shadow-md hover:shadow-lg transition-shadow">
-      <img 
-        src={imgUrl} 
-        alt={name} 
-        className="w-16 h-16 rounded-full object-cover mb-4 border-2 border-[#003399] shadow-sm" 
-      />
+      {imgSrc && !imgError ? (
+        <img 
+          src={imgSrc} 
+          alt={name} 
+          onError={() => setImgError(true)}
+          className="w-16 h-16 rounded-full object-cover mb-4 border-2 border-[#003399] shadow-sm bg-gray-100" 
+        />
+      ) : (
+        <div className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl mb-4 shadow-sm border-2 border-transparent ${color || 'bg-gray-200 text-gray-700'}`}>
+          {initials}
+        </div>
+      )}
       <h4 className="font-bold text-lg mb-1 text-[#003399]">{name}</h4>
       <p className="text-sm text-gray-600 font-sans">{role}</p>
     </div>
