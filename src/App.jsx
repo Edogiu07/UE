@@ -74,28 +74,28 @@ const App = () => {
             <FounderCard 
               initials="RS"
               color="bg-blue-100 text-blue-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/1/1a/Robert_Schuman_1949.jpg"
+              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/1/1a/Robert_Schuman_1949.jpg&w=150&h=150&fit=cover"
               name="Robert Schuman" 
               role="Ministro francese · Architetto della CECA" 
             />
             <FounderCard 
               initials="JM"
               color="bg-emerald-100 text-emerald-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/8/87/Jean_Monnet_%281888-1979%29.jpg"
+              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/8/87/Jean_Monnet_%281888-1979%29.jpg&w=150&h=150&fit=cover"
               name="Jean Monnet" 
               role="Ispiratore del metodo comunitario" 
             />
             <FounderCard 
               initials="AdG"
               color="bg-red-100 text-red-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/c/cd/Alcide_De_Gasperi_1.jpg"
+              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/c/cd/Alcide_De_Gasperi_1.jpg&w=150&h=150&fit=cover"
               name="Alcide De Gasperi" 
               role="Statista italiano · Europeista convinto" 
             />
             <FounderCard 
               initials="KA"
               color="bg-yellow-100 text-yellow-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/8/86/Konrad_Adenauer_%281952%29.jpg"
+              imgUrl="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/8/86/Konrad_Adenauer_%281952%29.jpg&w=150&h=150&fit=cover"
               name="Konrad Adenauer" 
               role="Cancelliere tedesco · Riconciliazione franco-tedesca" 
             />
@@ -360,23 +360,13 @@ const HighlightBlock = ({ children, className = "" }) => (
 );
 
 const FounderCard = ({ initials, name, role, color, imgUrl }) => {
-  const [imgError, setImgError] = useState(false);
-
   return (
     <div className="bg-white border-b-4 border-[#003399] rounded-t-xl rounded-b-md p-6 flex flex-col items-center text-center shadow-md hover:shadow-lg transition-shadow">
-      {imgUrl && !imgError ? (
-        <img 
-          src={imgUrl} 
-          alt={``} 
-          referrerPolicy="no-referrer"
-          onError={() => setImgError(true)}
-          className="w-16 h-16 rounded-full object-cover mb-4 border-2 border-[#003399] shadow-sm" 
-        />
-      ) : (
-        <div className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl mb-4 ${color || 'bg-gray-200 text-gray-700'}`}>
-          {initials}
-        </div>
-      )}
+      <img 
+        src={imgUrl} 
+        alt={name} 
+        className="w-16 h-16 rounded-full object-cover mb-4 border-2 border-[#003399] shadow-sm" 
+      />
       <h4 className="font-bold text-lg mb-1 text-[#003399]">{name}</h4>
       <p className="text-sm text-gray-600 font-sans">{role}</p>
     </div>
