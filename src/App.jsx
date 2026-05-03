@@ -276,7 +276,7 @@ const App = () => {
           <SectionTitle title="Fonti e Riferimenti" />
           
           <p>
-            Di seguito è riportato l'elenco delle fonti utilizzate per la stesura di questo saggio visivo, suddivise per argomenti. I link rimandano ai documenti originali, approfondimenti e testi di riferimento.
+            Queste sono le fonti utilizzate per la creazione del sito, suddivise per argomenti.
           </p>
 
           <div className="space-y-6 font-sans">
@@ -284,7 +284,6 @@ const App = () => {
               <SourceLink publisher="Wikipedia" title="Manifesto di Ventotene: contesto storico, autori e diffusione clandestina" url="https://it.wikipedia.org/wiki/Manifesto_di_Ventotene" />
               <SourceLink publisher="Sky TG24" title="Cos'è il Manifesto di Ventotene, testo e significato: testo integrale e punti fondamentali" url="https://tg24.sky.it/mondo/approfondimenti/ventotene-manifesto-cos-e" />
               <SourceLink publisher="Studenti.it" title="Manifesto di Ventotene: spiegazione semplice, punti fondamentali e testo" url="https://www.studenti.it/manifesto-di-ventotene-spiegazione-semplice-punti-fondamentali-testo.html" />
-              <SourceLink publisher="PDF testo originale (La Repubblica / Gedi)" title="edizione con prefazione di Eugenio Colorni" url="https://static.gedidigital.it/download/pdf/repubblica/2025/politica/manifesto_ventotene_all.pdf" />
               <SourceLink publisher="Comune di Venezia" title="Il Manifesto di Ventotene, edizione 2022 con Tesi del MFE" url="https://www.comune.venezia.it/sites/comune.venezia.it/files/page/files/Il%20Manifesto%20di%20Ventotene%202022%20web.pdf" />
             </SourceGroup>
 
@@ -297,10 +296,8 @@ const App = () => {
 
             <SourceGroup title="Trattato di Maastricht, criteri di convergenza e euro">
               <SourceLink publisher="EUR-Lex (fonte primaria ufficiale UE)" title="Trattato di Maastricht sull'Unione europea" url="https://eur-lex.europa.eu/IT/legal-content/summary/treaty-of-maastricht-on-european-union.html" />
-              <SourceLink publisher="BCE / Banca Centrale Europea" title="Cinque cose da sapere sul Trattato di Maastricht: criteri di convergenza" url="https://www.ecb.europa.eu/ecb-and-you/explainers/tell-me-more/html/maastricht_treaty.it.html" />
               <SourceLink publisher="Treccani" title="Trattato di Maastricht, Dizionario di Economia e Finanza" url="https://www.treccani.it/enciclopedia/trattato-di-maastricht_(Dizionario-di-Economia-e-Finanza)/" />
               <SourceLink publisher="Wikipedia" title="Trattato di Maastricht: struttura a tre pilastri, percorso istituzionale" url="https://it.wikipedia.org/wiki/Trattato_di_Maastricht" />
-              <SourceLink publisher="Testo integrale del Trattato (Gazzetta Ufficiale UE, C 191/1992)" title="Documento ufficiale in PDF" url="https://www.eticapa.it/eticapa/wp-content/uploads/2014/11/Testo-del-trattato-di-Maastricht.pdf" />
             </SourceGroup>
 
             <SourceGroup title="Green Deal e transizione ecologica">
@@ -309,7 +306,6 @@ const App = () => {
               <SourceLink publisher="Consiglio dell'UE (fonte primaria ufficiale)" title="Fit for 55: il piano dell'UE per una transizione verde" url="https://www.consilium.europa.eu/it/policies/green-deal/fit-for-55-the-eu-plan-for-a-green-transition/" />
               <SourceLink publisher="Consiglio dell'UE" title="Cronistoria del Green Deal e del pacchetto Fit for 55" url="https://www.consilium.europa.eu/it/policies/european-green-deal/timeline-european-green-deal-and-fit-for-55/" />
               <SourceLink publisher="ECCO Climate" title="Fit for 55: cos'è e come funziona (analisi dettagliata ETS e CBAM)" url="https://eccoclimate.org/it/fit-for-55/" />
-              <SourceLink publisher="Pagella Politica" title="Che fine ha fatto il Green Deal (analisi critica e rallentamenti post-2024)" url="https://pagellapolitica.it/articoli/clima-green-deal-elezioni-europee" />
               <SourceLink publisher="Wikipedia" title="Green Deal europeo: panoramica completa con cronologia" url="https://it.wikipedia.org/wiki/Green_Deal_europeo" />
             </SourceGroup>
           </div>
