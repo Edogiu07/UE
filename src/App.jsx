@@ -27,6 +27,12 @@ const App = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">L'Unione Europea</h1>
           <h2 className="text-2xl md:text-3xl font-medium mb-6 text-blue-100">Dalle macerie della guerra alla casa comune</h2>
           <p className="text-[#FFCC00] italic text-xl">Un percorso storico · 1941 – oggi</p>
+          
+          <div className="mt-10 inline-block bg-white/10 px-5 py-2.5 rounded-full border border-white/20 backdrop-blur-sm shadow-sm">
+            <p className="text-sm md:text-base font-sans text-blue-50">
+              A cura di <span className="font-bold text-white">Mariana Suarez Rolong</span> <span className="mx-2 opacity-60">|</span> 4L IPS Cavalieri Marignoni
+            </p>
+          </div>
         </div>
       </header>
 
@@ -68,28 +74,28 @@ const App = () => {
             <FounderCard 
               initials="RS"
               color="bg-blue-100 text-blue-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Robert_Schuman_1949.jpg/200px-Robert_Schuman_1949.jpg"
+              imgUrl="https://upload.wikimedia.org/wikipedia/commons/1/1a/Robert_Schuman_1949.jpg"
               name="Robert Schuman" 
               role="Ministro francese · Architetto della CECA" 
             />
             <FounderCard 
               initials="JM"
               color="bg-emerald-100 text-emerald-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Jean_Monnet_%281888-1979%29.jpg/200px-Jean_Monnet_%281888-1979%29.jpg"
+              imgUrl="https://upload.wikimedia.org/wikipedia/commons/8/87/Jean_Monnet_%281888-1979%29.jpg"
               name="Jean Monnet" 
               role="Ispiratore del metodo comunitario" 
             />
             <FounderCard 
               initials="AdG"
               color="bg-red-100 text-red-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Alcide_De_Gasperi_1.jpg/200px-Alcide_De_Gasperi_1.jpg"
+              imgUrl="https://upload.wikimedia.org/wikipedia/commons/c/cd/Alcide_De_Gasperi_1.jpg"
               name="Alcide De Gasperi" 
               role="Statista italiano · Europeista convinto" 
             />
             <FounderCard 
               initials="KA"
               color="bg-yellow-100 text-yellow-800"
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Konrad_Adenauer_%281952%29.jpg/200px-Konrad_Adenauer_%281952%29.jpg"
+              imgUrl="https://upload.wikimedia.org/wikipedia/commons/8/86/Konrad_Adenauer_%281952%29.jpg"
               name="Konrad Adenauer" 
               role="Cancelliere tedesco · Riconciliazione franco-tedesca" 
             />
